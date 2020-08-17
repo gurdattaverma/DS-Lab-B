@@ -18,7 +18,7 @@ int main(){
 	cout<<"Enter the pos";cin>>pos;
 	cout<<"Enter the value of item";cin>>item;
 	//function call
-	void arrayinsertion(lb,ub,ip,pos,item,10);
+	arrayinsertion(lb,ub,ip,pos,item,10);
 	return 0;
 }
 

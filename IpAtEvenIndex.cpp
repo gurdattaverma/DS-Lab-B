@@ -8,11 +8,11 @@
 
 #include <iostream>
 
-void evenInsertion(int, int, int[], int);
+void evenInsertion(int, int, int[], int, int);
 
 int main()
 {
-  int n,lb,ub,max;
+  int n,lb,ub,max,num;
 
   std::cout << "Enter number of elements in array:" ;
   std::cin >> n;
@@ -32,8 +32,10 @@ int main()
   std::cout << "\nEnter the value of upper bound: " ;
   std::cin >> ub;
 
+  std::cout << "\nEnter the value to be added in every even indices: " ;
+  std::cin >> num;
   //calling the evenInput Function
-  evenInsertion(lb,ub,arr,max);
+  evenInsertion(lb,ub,arr,max,num);
 
   // Triversing the array
   for(int i=lb;i<=ub;i++)
@@ -44,7 +46,7 @@ int main()
   return 0;
 }
 
-void evenInsertion(int lb,int ub,int list[],int max)
+void evenInsertion(int lb,int ub,int list[],int num,int max)
 {
   int i,j,item;
   if(lb>ub)
@@ -65,18 +67,8 @@ void evenInsertion(int lb,int ub,int list[],int max)
     j = lb + 1;
   while(j<=ub)
   {
-    std::cout << "\nEnter element to insert at " << j << "index:";
-    std::cin >> item;
-    for(i=ub;;i--)
-    {
-      list[i]=list[i-1];
-      if(i==j)
-      {
-        break;
-      }
-    }
-    list[j] = item;
-    j=j+2;
+      list[j] = list[j] + num;
+      j = j+2;
   }
 
 }

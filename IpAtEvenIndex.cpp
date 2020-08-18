@@ -8,6 +8,7 @@
 
 #include <iostream>
 
+void arrayTraverse(int, int, int[],int);
 void evenInsertion(int, int, int[], int, int);
 
 int main()
@@ -35,13 +36,9 @@ int main()
   std::cout << "\nEnter the value to be added in every even indices: " ;
   std::cin >> num;
   //calling the evenInput Function
-  evenInsertion(lb,ub,arr,max,num);
+  evenInsertion(lb,ub,arr,num,max);
 
-  // Triversing the array
-  for(int i=lb;i<=ub;i++)
-  {
-    std::cout << arr[i] << "\t" ;
-  }
+  arrayTraverse(lb,ub,arr,max);
 
   return 0;
 }
@@ -71,4 +68,12 @@ void evenInsertion(int lb,int ub,int list[],int num,int max)
       j = j+2;
   }
 
+}
+
+void arrayTraverse(int lb, int ub,int list[],int max)
+{
+  for(int i=lb;i<=ub;i++)
+  {
+    std::cout << list[i] << "\t" ;
+  }
 }

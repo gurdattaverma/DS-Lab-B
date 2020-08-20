@@ -10,7 +10,7 @@ void travarray(int[],int,int,int);
 int main(){
 	int ip[10],lb,ub,pos,item;
 	cout<<"Enter Elements of array";
-	for(int i=0;i<=10;i++){
+	for(int i=0;i<10;i++){
 		cin>>ip[i];
 	}
 	cout<<"Enter the value of lower bound";cin>>lb;
@@ -18,7 +18,7 @@ int main(){
 	cout<<"Enter the pos";cin>>pos;
 	cout<<"Enter the value of item";cin>>item;
 	//function call
-	arrayinsertion(lb,ub,ip,pos,item,3);
+	arrayinsertion(lb,ub,ip,pos,item,9);
 	return 0;
 }
 
@@ -37,7 +37,7 @@ void travarray(int ip[],int lb,int ub, int max){
 }
 
 void arrayinsertion(int lb,int ub,int ip[],int pos, int item,int max){
-	cout<<"Input Array";
+	cout<<"Input Array :";
 	travarray(ip,lb,ub,10);
 	if(lb>ub){
 		cout<<"error";
@@ -50,12 +50,13 @@ void arrayinsertion(int lb,int ub,int ip[],int pos, int item,int max){
 	for(int i=ub; ;){
 		ip[i]=ip[i-1];
 		i=i-1;
-		if(i==pos-1){
+		if(i==pos+lb-1){
 			break;
 		}
 	}
-	ip[pos]=item;
+	ip[pos+lb-1]=item;
 	cout<<"\n";
-	travarray(ip,lb,ub,10);
+	cout<<"Output Array:";
+    travarray(ip,lb,ub,10);
 }
 
